@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="tierlist.html">Tier List</a></li>
+                <li><a href="contact.html">Contact Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" maxlength="1600"></textarea>
+
+            <fieldset>
+                <legend>Favorite Candy Tier:</legend>
+                <input type="radio" id="s" name="tier" value="S">
+                <label for="s">S Tier</label>
+                <input type="radio" id="a" name="tier" value="A">
+                <label for="a">A Tier</label>
+            </fieldset>
+
+            <label for="suggestions">Candy Suggestions:</label>
+            <input type="text" id="suggestions" name="suggestions">
+
+            <label for="feedback">Any feedback?</label>
+            <input type="checkbox" id="feedback" name="feedback" value="yes"> Yes
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Contact Us</p>
+    </footer>
+    
+</body>
+</html>
