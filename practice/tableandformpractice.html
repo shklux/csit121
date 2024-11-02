@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin: 5px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Class Schedule</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Course Number</th>
+                <th>Course Name</th>
+                <th>Instructor's Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CSIT 121</td>
+                <td>Web Development</td>
+                <td>Prof. Brown</td>
+            </tr>
+            <tr>
+                <td>BIOL 101</td>
+                <td>Introduction to Biology</td>
+                <td>Prof. Hovis</td>
+            </tr>
+            <tr>
+                <td>SOCL 101</td>
+                <td>Introduction to Sociology</td>
+                <td>Prof. Kuwar</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Feedback Form</h2>
+
+    <form action="#" method="post">
+        <label for="name">Full Name:</label><br>
+        <input type="name" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="comments">Comments (Max 1600 characters):</label><br>
+        <textarea id="comments" name="comments" maxlength="1600" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <footer>
+        <p>Created by Laxmi Shakya - <a href="mailto:shak_lux@yahoo.com"></a>shak_lux@yahoo.com</a></p>
+    </footer>
+    
+</body>
+</html>
