@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Format Examples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="topnav"> id="myTopnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="image1.html">PNG Example</a>
+            <a href="image2.html">JPG Example</a>
+            <a href="image3.html">GIF Example</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+        <h1>Image Format Examples</h1>
+    </header>
+
+    <main>
+        <h2>Welcome to My Image Gallery</h2>
+        <p>Explore different image formats by clicking the links below.</p>
+        
+        <ul>
+            <li><a href="image1.html">PNG Image Example</a></li>
+            <li><a href="image2.html">JPG Image Example</a></li>
+            <li><a href="image3.html">GIF Image Example</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Image Website</p>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementByID("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>  
+</body>
+</html>
