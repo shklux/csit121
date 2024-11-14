@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee information</title>
+</head>
+<body>
+    <h1>Employee Information</h1>
+    <ul id="employee-list">
+        <!-- Employee data will be displayed here -->
+    </ul>
+
+    <script>
+        fetch('employee.xml')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'text/xml');
+                const employees = xmlDoc.getElementsByTagName('employee');
+
+                // Display each employee's information
+                const employeeList = document.getElementById('employee-list');
+                for (let i = 0; i < employees.length; i++) {
+                    const employee = employees[i];
+                    const id = employee.getElementsByTagName('id')[0].textContent;
+                    const name = employee.getElementsByTagName('name')[0].textContent;
+                    const room = employee.getElementsByTagName('room')[0].textContent;
+
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `ID: ${id} - Name: ${name} - Room: ${room}`;
+                    employeeList.appendChild(listItem);
+                }
+            })
+            .catch(error => console.error('Error loading XML:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Employee Directory - Bonus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #searchBar {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+        }
+        .employee {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Directory - Search Feature</h1>
+    <input type="text" id="searchBar" placeholder="Search by ID, Name, or Room..." onkeyup="filterEmployees()">
+    
+    <div id="employee-container">
+        <Filtered employee data will be displayed here -->
+    </div>
+
+    <script>
+        let employees = [];
+
+        // Fetch and parse employee.xml data
+        fetch('employee.xml')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'text/xml');
+                const employeeNodes = xmlDoc.getElementsByTagName('employee');
+
+                // Load employee data into an array
+                for (let i = 0; i < employeeNodes.length; i++) {
+                    const id = employeeNodes[i].getElementsByTagName('id')[0].textContent;
+                    const name = employeeNodes[i].getElementsByTagName('name')[0].textContent;
+                    const room = employeeNodes[i].getElementsByTagName('room')[0].textContent;
+
+                    employees.push({ id, name, room });
+                }
+
+                // Display all employees initially
+                displayEmployees(employees);
+            })
+            .catch(error => console.error('Error loading XML:', error));
+
+        // Function to display employees in the employee container
+        function displayEmployees(employeeList) {
+            const container = document.getElementById('employee-container');
+            container.innerHTML = ''; // Clear current list
+
+            employeeList.forEach(employee => {
+                const div = document.createElement('div');
+                div.classList.add('employee');
+                div.innerHTML = `<strong>ID:</strong> ${employee.id} <br>
+                                 <strong>Name:</strong> ${employee.name} <br>
+                                 <strong>Room:</strong> ${employee.room}`;
+                container.appendChild(div);
+            });
+        }
+
+        // Function to filter employees based on search input
+        function filterEmployees() {
+            const query = document.getElementById('searchBar').value.toLowerCase();
+            const filteredEmployees = employees.filter(employee => {
+                return employee.id.toLowerCase().includes(query) ||
+                       employee.name.toLowerCase().includes(query) ||
+                       employee.room.toLowerCase().includes(query);
+            });
+            displayEmployees(filteredEmployees);
+        }
+    </script>
+</body>
+</html>

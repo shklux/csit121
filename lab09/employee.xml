@@ -1,0 +1,32 @@
+<employees>
+    <employee>
+        <id>101</id>
+        <name>Angila Gurung</name>
+        <room>101A</room>
+    </employee>
+    <employee>
+        <id>102</id>
+        <name>Jane Smith</name>
+        <room>102B</room>
+    </employee>
+    <employee>
+        <id>103</id>
+        <name>Alex Shrestha</name>
+        <room>103C</room>
+    </employee>
+    <employee>
+        <id>104</id>
+        <name>Ema Bhandari</name>
+        <room>104D</room>
+    </employee>
+    <employee>
+        <id>105</id>
+        <name>Michael Brown</name>
+        <room>105E</room>
+    </employee>
+    <employee>
+        <id>106</id>
+        <name>Lisa Shakya</name>
+        <room>106F</room>
+    </employee>
+</employees>
